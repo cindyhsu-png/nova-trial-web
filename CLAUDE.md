@@ -10,7 +10,8 @@
 - `assets/analytics.js` 是四站共用那份（GA4 `G-Y3V2G0L41K`），不要在這裡改，改要四站一起改。
 
 ## 部署
-- 預定：GitHub Pages → iframe 嵌進 Kolable（比照 nova-web / ai-xplore-web）。**還沒建 GitHub repo、還沒部署。**
+- repo：https://github.com/cindyhsu-png/nova-trial-web（public，main 分支根目錄）
+- Pages：https://cindyhsu-png.github.io/nova-trial-web/ → 之後 iframe 嵌進 Kolable（比照 nova-web / ai-xplore-web，**還沒嵌**）
 - 本機預覽：`.claude/launch.json` 的 `nova-trial`，伺服器讀的是 scratchpad 副本（預覽伺服器讀不到 Desktop），改完要 rsync 過去。
 
 ## 收單／CTA
