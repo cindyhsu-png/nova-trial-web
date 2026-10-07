@@ -242,19 +242,17 @@ section{position:relative;padding:clamp(72px,10vw,128px) 0;border-top:1px solid 
 .track.in .track__line.l1 b{width:100%}
 .track.in .track__line.l2 b{width:50%;transition-delay:.6s}
 @media(max-width:600px){.track__st{width:84px}.track__st span{font-size:12px}}
-.nova-sum{position:relative;text-align:center;padding:clamp(40px,6vw,72px) clamp(16px,4vw,48px);border:1px solid var(--line-soft);border-radius:24px;overflow:hidden;
-  background:radial-gradient(ellipse at 50% 55%,rgba(255,138,50,.22),transparent 60%),url(img/bg-warp.jpg) center/cover;}
-.nova-sum::before{content:"";position:absolute;inset:0;background:rgba(8,7,10,.55)}
+.nova-sum{position:relative;text-align:center;padding:clamp(28px,4vw,40px) clamp(16px,4vw,40px);border:1px solid var(--line-soft);border-radius:20px;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 50%,rgba(255,138,50,.16),transparent 65%),url(img/bg-warp.jpg) center/cover;max-width:960px;margin:0 auto}
+.nova-sum::before{content:"";position:absolute;inset:0;background:rgba(8,7,10,.68)}
 .nova-sum>*{position:relative}
-.nova-sum__title{font-family:var(--font-display);font-weight:700;font-size:clamp(36px,6.4vw,76px);line-height:1.1;color:#fff8ef;
-  text-shadow:0 0 18px rgba(255,138,50,.85),0 0 42px rgba(255,138,50,.45)}
-.nova-sum__tag{margin:18px auto 0;max-width:760px;font-weight:700;font-size:clamp(17px,2.2vw,26px);color:var(--accent-2)}
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(32px,5vw,56px)}
-.pillars>div{padding:6px 16px}
-.pillars>div+div{border-left:1px solid rgba(255,176,102,.35)}
-.pillars h3{font-size:clamp(18px,2vw,22px)}
-.pillars p{margin-top:8px;font-size:14px;color:var(--ink-1)}
-@media(max-width:640px){.pillars{grid-template-columns:1fr;gap:18px}.pillars>div+div{border-left:0;border-top:1px solid rgba(255,176,102,.25);padding-top:18px}}
+.nova-sum__tag{margin:0 auto;max-width:720px;font-weight:700;font-size:clamp(15px,1.6vw,18px);color:var(--accent-2)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px}
+.pillars>div{padding:4px 16px}
+.pillars>div+div{border-left:1px solid rgba(255,176,102,.3)}
+.pillars h3{font-size:16px}
+.pillars p{margin-top:4px;font-size:13px;color:var(--ink-1)}
+@media(max-width:640px){.pillars{grid-template-columns:1fr;gap:14px}.pillars>div+div{border-left:0;border-top:1px solid rgba(255,176,102,.22);padding-top:14px}}
 .facts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:36px;color:var(--ink-1);font-size:15px}
 .facts b{color:var(--ink-0);font-family:var(--font-display);font-size:18px;margin-right:6px}
 
@@ -424,7 +422,7 @@ html.embedded .dock{display:none}
     <div class="sec-head c rv">
       <span class="kicker">MISSION MAP · 三關一條線</span>
       <h2>三堂課，<em>每關都帶走一樣東西</em></h2>
-      <p class="lead">不用會寫程式，也不用懂技術。從「AI 到底在想什麼」開始，三堂課帶你從會問、會做，一路到讓 AI 照你的方法工作。大家都在用 AI，差別只在會不會用。</p>
+      <p class="lead">從「AI 到底在想什麼」開始，三堂課帶你從會問、會做，一路到讓 AI 照你的方法工作。</p>
     </div>
     <div class="map">
       <article class="lv rv">
@@ -478,7 +476,7 @@ html.embedded .dock{display:none}
   <div class="wrap loot-wrap">
     <div class="rv">
       <span class="kicker">LOOT PREVIEW · 第 2 關成品</span>
-      <h2>60 分鐘後，<br><em>你手上會有這個</em></h2>
+      <h2>第二堂課後，<br><em>你手上會有這個</em></h2>
       <p class="lead">這是第 2 堂課的示範成品。同一份規格書，換一種風格決定，就長出完全不同的官網。</p>
       <div class="tabs" role="tablist" aria-label="切換風格">
         <button role="tab" aria-selected="true" data-demo="a">風格 A · 森林電光</button>
@@ -547,7 +545,6 @@ html.embedded .dock{display:none}
       <div class="track__st lock"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.8-.9.8-2.3-.1-3.1a2.2 2.2 0 0 0-2.9.1z"/><path d="M12 15l-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg></i><span>12 週專案班</span></div>
     </div>
     <div class="nova-sum rv">
-      <div class="nova-sum__title">NOVA 超星計畫</div>
       <p class="nova-sum__tag">別人練好幾年的專業，用 AI 賦能，你可以快速學習、做出成果</p>
       <div class="pillars">
         <div><h3>快速學會</h3><p>不用練好幾年，用 AI 加速上手</p></div>
@@ -596,19 +593,6 @@ html.embedded .dock{display:none}
   </div>
 </section>
 
-<!-- ===================== FAQ ===================== -->
-<section id="faq">
-  <div class="wrap">
-    <div class="sec-head c rv"><span class="kicker">FAQ</span><h2>出發前的問題</h2></div>
-    <div class="faq rv">
-      <details><summary>100 元包含哪些？</summary><p>三堂前導課（通識課、實戰課、進階課，共 180 分鐘），加上學員講義、課堂實作素材，以及一次 NOVA 顧問一對一諮詢。</p></details>
-      <details><summary>完全沒碰過 AI 也可以嗎？</summary><p>可以。第 1 堂就是從「AI 到底在做什麼」開始講。難的部分課程先幫你做好，你只要跟著做幾個關鍵決定，下課就有成品。</p></details>
-      <details><summary>需要準備什麼工具？</summary><p>第 1 堂用 ChatGPT、Gemini、Claude 任一個，免費版就可以。第 2、3 堂使用 Claude，建議使用付費方案（費用另計）；沒有付費方案，課程也有替代做法，跟得上進度。</p></details>
-      <details><summary>顧問諮詢會聊什麼？</summary><p>看你在三堂課做出來的作品、聽你想用 AI 達成什麼（轉職、接案、或是在現在的工作上用），再幫你找出最適合的領域方向。</p></details>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== FINAL ===================== -->
 <section class="final" id="final">
   <div class="hero__grid" aria-hidden="true"></div>
@@ -621,6 +605,19 @@ html.embedded .dock{display:none}
         <a class="btn btn--primary cta-fallback" href="#pricing">領取登艦證 <span class="price">NT$100</span></a>
       </div>
       <a class="btn btn--ghost" href="#play">回去玩第 0 關</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head c rv"><span class="kicker">FAQ</span><h2>出發前的問題</h2></div>
+    <div class="faq rv">
+      <details><summary>100 元包含哪些？</summary><p>三堂前導課（通識課、實戰課、進階課，共 180 分鐘），加上學員講義、課堂實作素材，以及一次 NOVA 顧問一對一諮詢。</p></details>
+      <details><summary>完全沒碰過 AI 也可以嗎？</summary><p>可以。第 1 堂就是從「AI 到底在做什麼」開始講。難的部分課程先幫你做好，你只要跟著做幾個關鍵決定，下課就有成品。</p></details>
+      <details><summary>需要準備什麼工具？</summary><p>第 1 堂用 ChatGPT、Gemini、Claude 任一個，免費版就可以。第 2、3 堂使用 Claude，建議使用付費方案（費用另計）；沒有付費方案，課程也有替代做法，跟得上進度。</p></details>
+      <details><summary>顧問諮詢會聊什麼？</summary><p>看你在三堂課做出來的作品、聽你想用 AI 達成什麼（轉職、接案、或是在現在的工作上用），再幫你找出最適合的領域方向。</p></details>
     </div>
   </div>
 </section>
