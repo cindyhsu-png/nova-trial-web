@@ -5,7 +5,8 @@
 ## 正本在哪
 - 頁面：`index.html` 單檔（純靜態，沒有 build、沒有 CMS）。
 - 視覺 token 照抄 `../nova-web/index.html` 的 `:root`（深底 `#08070a`、主色 `#ff8a32`、Chakra Petch＋Noto Sans TC）。
-- 課程內容的正本是 `../前導課程教材`（repo `ai-precourse-materials`）。頁上的時數、頓悟句、工具要求都從那份 README 抄來，**教材改了這頁要跟著改**。
+- 課程內容的正本是 `../前導課程教材`（repo `ai-precourse-materials`）。頁上的頓悟句、工具要求都從那份 README 抄來，**教材改了這頁要跟著改**。
+- ⚠️ 時數是 Cindy 2026-10-07 指定的「每堂 60 分、共 180 分」，**跟教材的 68／90／90 不同，不要改回教材數字**。
 - `demo/style-a.html`、`demo/style-b.html` 是從教材 `第2堂_實戰課/成品示範_*.html` 複製的，虛構品牌「植燃 VERDA」。
 - `assets/analytics.js` 是四站共用那份（GA4 `G-Y3V2G0L41K`），不要在這裡改，改要四站一起改。
 

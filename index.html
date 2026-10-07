@@ -18,7 +18,7 @@
   --bg:#08070a;--bg-2:#0f0d11;--ink-0:#f2eee9;--ink-1:#a39a90;--ink-2:#655d55;
   --accent:#ff8a32;--accent-2:#ffb066;
   --line:rgba(236,224,210,.13);--line-soft:rgba(236,224,210,.06);
-  --d-mkt:#E0724A;--d-des:#B36FD1;--d-med:#4AA6E0;--d-prod:#2EBFA0;--d-eng:#8B7CFF;
+  --d-mkt:#E0724A;--d-des:#B36FD1;--d-med:#4AA6E0;--d-prod:#2EBFA0;--d-eng:#8B7CFF;--d-ops:#E0B84A;--d-acc:#7FCF6F;--d-sal:#E85A7E;--d-hr:#4FD1D9;
   --font-display:'Chakra Petch','Noto Sans TC',-apple-system,system-ui,sans-serif;
   --font-mono:'JetBrains Mono',ui-monospace,monospace;
   --font-tc:'Noto Sans TC',-apple-system,system-ui,sans-serif;
@@ -215,14 +215,14 @@ section{position:relative;padding:clamp(72px,10vw,128px) 0;border-top:1px solid 
   border-radius:8px;height:30px;display:grid;place-items:center}
 .boss li b{display:block;font-family:var(--font-display);font-size:17px}
 .boss li span{color:var(--ink-1);font-size:14px}
-/* 五領域羅盤 */
+/* 領域羅盤 */
 .compass{position:relative;aspect-ratio:1;max-width:380px;margin:0 auto;width:100%}
 .compass__ring{position:absolute;inset:0;border-radius:50%;border:1px dashed var(--line)}
 .compass__ring.r2{inset:22%;border-style:solid;border-color:var(--line-soft)}
 .compass__core{position:absolute;inset:36%;border-radius:50%;display:grid;place-items:center;text-align:center;
   background:radial-gradient(circle,rgba(255,138,50,.25),transparent 70%);font-family:var(--font-display);font-weight:600;font-size:14px;line-height:1.35}
 .compass__core small{display:block;font-family:var(--font-mono);font-size:10px;color:var(--ink-2);letter-spacing:.12em}
-.dom{position:absolute;transform:translate(-50%,-50%);padding:7px 12px;border-radius:999px;font-size:13px;font-weight:500;white-space:nowrap;
+.dom{position:absolute;transform:translate(-50%,-50%);padding:6px 11px;border-radius:999px;font-size:13px;font-weight:500;white-space:nowrap;
   border:1px solid var(--dc);color:var(--dc);background:rgba(8,7,10,.85);transition:background .3s,color .3s,box-shadow .3s}
 .dom.lit{background:var(--dc);color:#0b0a0c;box-shadow:0 0 24px var(--dc)}
 .compass__needle{position:absolute;left:50%;top:50%;width:2px;height:38%;background:linear-gradient(var(--accent),transparent);
@@ -231,26 +231,30 @@ section{position:relative;padding:clamp(72px,10vw,128px) 0;border-top:1px solid 
 /* ---------- 解鎖：NOVA 專案班 ---------- */
 .track{display:flex;align-items:center;gap:0;margin:0 auto 48px;max-width:720px}
 .track__st{flex:none;text-align:center;width:120px}
-.track__st i{display:grid;place-items:center;width:44px;height:44px;margin:0 auto 10px;border-radius:50%;border:1px solid var(--line);
+.track__st i{display:grid;place-items:center;width:52px;height:52px;margin:0 auto 10px;border-radius:50%;border:1px solid var(--line);
   font-style:normal;font-family:var(--font-mono);font-size:13px;color:var(--ink-2);background:var(--bg)}
 .track__st.done i{border-color:var(--accent);color:#1a0d02;background:var(--accent)}
 .track__st.next i{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 6px rgba(255,138,50,.12)}
-.track__st.lock i{border-style:dashed}
+.track__st.lock i{border-style:dashed;color:var(--ink-1)}
 .track__st span{font-size:13px;color:var(--ink-1)}
 .track__line{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden;margin-bottom:28px}
 .track__line b{position:absolute;inset:0;width:0;background:var(--accent);transition:width 1.2s var(--ease)}
 .track.in .track__line.l1 b{width:100%}
 .track.in .track__line.l2 b{width:50%;transition-delay:.6s}
 @media(max-width:600px){.track__st{width:84px}.track__st span{font-size:12px}}
-.doms{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-@media(max-width:1000px){.doms{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.doms{grid-template-columns:1fr}}
-.dcard{position:relative;border:1px solid var(--line);border-radius:16px;padding:20px 18px;background:var(--bg-2);overflow:hidden;transition:border-color .3s,transform .3s var(--ease)}
-.dcard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--dc)}
-.dcard:hover{border-color:var(--dc);transform:translateY(-3px)}
-.dcard .n{font-family:var(--font-mono);font-size:11px;color:var(--dc);letter-spacing:.12em}
-.dcard h3{font-size:18px;margin:6px 0 10px}
-.dcard p{font-size:14px;color:var(--ink-1)}
+.nova-sum{position:relative;text-align:center;padding:clamp(40px,6vw,72px) clamp(16px,4vw,48px);border:1px solid var(--line-soft);border-radius:24px;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 55%,rgba(255,138,50,.22),transparent 60%),url(img/bg-warp.jpg) center/cover;}
+.nova-sum::before{content:"";position:absolute;inset:0;background:rgba(8,7,10,.55)}
+.nova-sum>*{position:relative}
+.nova-sum__title{font-family:var(--font-display);font-weight:700;font-size:clamp(36px,6.4vw,76px);line-height:1.1;color:#fff8ef;
+  text-shadow:0 0 18px rgba(255,138,50,.85),0 0 42px rgba(255,138,50,.45)}
+.nova-sum__tag{margin:18px auto 0;max-width:760px;font-weight:700;font-size:clamp(17px,2.2vw,26px);color:var(--accent-2)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(32px,5vw,56px)}
+.pillars>div{padding:6px 16px}
+.pillars>div+div{border-left:1px solid rgba(255,176,102,.35)}
+.pillars h3{font-size:clamp(18px,2vw,22px)}
+.pillars p{margin-top:8px;font-size:14px;color:var(--ink-1)}
+@media(max-width:640px){.pillars{grid-template-columns:1fr;gap:18px}.pillars>div+div{border-left:0;border-top:1px solid rgba(255,176,102,.25);padding-top:18px}}
 .facts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:36px;color:var(--ink-1);font-size:15px}
 .facts b{color:var(--ink-0);font-family:var(--font-display);font-size:18px;margin-right:6px}
 
@@ -358,7 +362,7 @@ html.embedded .dock{display:none}
           <div class="pass__f"><small>Flight</small><div>NV-000</div></div>
           <div class="pass__f full"><small>Route</small>
             <div class="pass__route">看懂 AI <i>→</i> 做出官網 <i>→</i> 打包 Skill <i>→</i> 顧問諮詢</div></div>
-          <div class="pass__f"><small>Duration</small><div>3 堂 · 248 分</div></div>
+          <div class="pass__f"><small>Duration</small><div>3 堂 · 180 分</div></div>
           <div class="pass__f"><small>Gate</small><div>線上</div></div>
         </div>
         <div class="pass__stub">
@@ -402,7 +406,7 @@ html.embedded .dock{display:none}
       <div class="badge-win" id="gWin">
         <div class="medal"><span>0</span></div>
         <h3>第 0 關通過 🎉</h3>
-        <p>你剛剛已經上完第 1 堂的前 3 分鐘。剩下的 245 分鐘，還有兩個你會親手做出來的作品。</p>
+        <p>你剛剛已經上完第 1 堂的前 3 分鐘。剩下的 177 分鐘，還有兩個你會親手做出來的作品。</p>
         <div class="btn-row c">
           <div class="cta-slot" data-cta="game">
             <a class="btn btn--primary cta-fallback" href="#pricing">繼續闖關 <span class="price">NT$100</span></a>
@@ -420,12 +424,12 @@ html.embedded .dock{display:none}
     <div class="sec-head c rv">
       <span class="kicker">MISSION MAP · 三關一條線</span>
       <h2>三堂課，<em>每關都帶走一樣東西</em></h2>
-      <p class="lead">不是聽完就忘的講座。難的部分課程先幫你做好，你只要做幾個關鍵決定，保證下課手上有成品。</p>
+      <p class="lead">不用會寫程式，也不用懂技術。從「AI 到底在想什麼」開始，三堂課帶你從會問、會做，一路到讓 AI 照你的方法工作。大家都在用 AI，差別只在會不會用。</p>
     </div>
     <div class="map">
       <article class="lv rv">
         <div class="lv__node"></div>
-        <div class="lv__meta"><b>LV.1 · 通識課</b><span>68 MIN</span></div>
+        <div class="lv__meta"><b>LV.1 · 通識課</b><span>60 MIN</span></div>
         <h3>真的看懂 AI</h3>
         <p class="one">從 AI 的「使用者」，升級成會開的「駕駛員」。</p>
         <ul>
@@ -439,7 +443,7 @@ html.embedded .dock{display:none}
       </article>
       <article class="lv rv">
         <div class="lv__node"></div>
-        <div class="lv__meta"><b>LV.2 · 實戰課</b><span>90 MIN</span></div>
+        <div class="lv__meta"><b>LV.2 · 實戰課</b><span>60 MIN</span></div>
         <h3>產品設計實戰</h3>
         <p class="one">走一遍設計產出的流程，親手讓 AI 做出一個能發佈的品牌官網。</p>
         <ul>
@@ -453,7 +457,7 @@ html.embedded .dock{display:none}
       </article>
       <article class="lv rv">
         <div class="lv__node"></div>
-        <div class="lv__meta"><b>LV.3 · 進階課</b><span>90 MIN</span></div>
+        <div class="lv__meta"><b>LV.3 · 進階課</b><span>60 MIN</span></div>
         <h3>打包你的 Skill</h3>
         <p class="one">把你的做事方法寫成 AI 的工作手冊，之後一句話就能叫它照做。</p>
         <ul>
@@ -474,8 +478,8 @@ html.embedded .dock{display:none}
   <div class="wrap loot-wrap">
     <div class="rv">
       <span class="kicker">LOOT PREVIEW · 第 2 關成品</span>
-      <h2>90 分鐘後，<br><em>你手上會有這個</em></h2>
-      <p class="lead">這是第 2 堂課的示範成品。同一份規格書，換一種風格決定，就長出完全不同的官網。你下課時做出來的，就是這種等級的東西。</p>
+      <h2>60 分鐘後，<br><em>你手上會有這個</em></h2>
+      <p class="lead">這是第 2 堂課的示範成品。同一份規格書，換一種風格決定，就長出完全不同的官網。</p>
       <div class="tabs" role="tablist" aria-label="切換風格">
         <button role="tab" aria-selected="true" data-demo="a">風格 A · 森林電光</button>
         <button role="tab" aria-selected="false" data-demo="b">風格 B · 日光植感</button>
@@ -499,12 +503,12 @@ html.embedded .dock{display:none}
       <div class="boss__grid">
         <div>
           <span class="kicker">BOSS STAGE · 顧問一對一</span>
-          <h2>打完三關，<br>跟 NOVA 顧問<em>聊一次</em></h2>
+          <h2>打完三關，<br>跟 NOVA 顧問<em style="white-space:nowrap">聊一次</em></h2>
           <p class="lead">上完課你會知道自己對 AI 有沒有感覺。接下來最難的是：往哪個方向走？</p>
           <ol>
             <li><div><b>看你的作品</b><span>從三堂課做出來的東西，看出你的強項跟手感。</span></div></li>
             <li><div><b>聽你想去哪</b><span>想轉職、想接案、想在現在的工作用上 AI，路線都不一樣。</span></div></li>
-            <li><div><b>幫你對準一個領域</b><span>從 NOVA 五大領域裡，找出最適合你的那一條 12 週路線。</span></div></li>
+            <li><div><b>幫你對準一個領域</b><span>從行銷、設計、營運、業務到人資，找出最適合你的那一條 12 週路線。</span></div></li>
           </ol>
         </div>
         <div class="compass" id="compass" aria-hidden="true">
@@ -512,11 +516,15 @@ html.embedded .dock{display:none}
           <div class="compass__ring r2"></div>
           <div class="compass__needle" id="needle"></div>
           <div class="compass__core"><div><small>YOUR</small>方向</div></div>
-          <span class="dom" style="--dc:var(--d-mkt);left:50%;top:6%">行銷</span>
-          <span class="dom" style="--dc:var(--d-des);left:93%;top:37%">設計</span>
-          <span class="dom" style="--dc:var(--d-med);left:77%;top:88%">自媒體</span>
-          <span class="dom" style="--dc:var(--d-prod);left:23%;top:88%">產品設計</span>
-          <span class="dom" style="--dc:var(--d-eng);left:7%;top:37%">工程</span>
+          <span class="dom" style="--dc:var(--d-mkt);left:50.0%;top:6.0%">行銷</span>
+          <span class="dom" style="--dc:var(--d-des);left:78.3%;top:16.3%">設計</span>
+          <span class="dom" style="--dc:var(--d-med);left:93.3%;top:42.4%">自媒體</span>
+          <span class="dom" style="--dc:var(--d-prod);left:88.1%;top:72.0%">產品設計</span>
+          <span class="dom" style="--dc:var(--d-eng);left:65.0%;top:91.3%">工程</span>
+          <span class="dom" style="--dc:var(--d-ops);left:35.0%;top:91.3%">營運</span>
+          <span class="dom" style="--dc:var(--d-acc);left:11.9%;top:72.0%">會計</span>
+          <span class="dom" style="--dc:var(--d-sal);left:6.7%;top:42.4%">業務</span>
+          <span class="dom" style="--dc:var(--d-hr);left:21.7%;top:16.3%">人資</span>
         </div>
       </div>
     </div>
@@ -529,21 +537,23 @@ html.embedded .dock{display:none}
     <div class="sec-head c rv">
       <span class="kicker">UNLOCK · NOVA 專案班</span>
       <h2>體驗完，<em>下一站是真的出航</em></h2>
-      <p class="lead">別人練好幾年的專業，用 AI 賦能，你可以快速學會、做出成果。業界教練陪跑 12 週。</p>
+      <p class="lead">前導課讓你看見 AI 能幫你做到什麼；專案班用 12 週、業界教練陪跑，把它變成你履歷上寫得出來的專業。</p>
     </div>
     <div class="track rv" id="track" aria-label="你的進度">
-      <div class="track__st done"><i>✓</i><span>前導體驗課</span></div>
+      <div class="track__st done"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></i><span>前導體驗課</span></div>
       <div class="track__line l1"><b></b></div>
-      <div class="track__st next"><i>02</i><span>顧問諮詢</span></div>
+      <div class="track__st next"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" stroke-width="3"/></svg></i><span>顧問諮詢</span></div>
       <div class="track__line l2"><b></b></div>
-      <div class="track__st lock"><i>🔒</i><span>12 週專案班</span></div>
+      <div class="track__st lock"><i><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.8-.9.8-2.3-.1-3.1a2.2 2.2 0 0 0-2.9.1z"/><path d="M12 15l-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg></i><span>12 週專案班</span></div>
     </div>
-    <div class="doms">
-      <div class="dcard rv" style="--dc:var(--d-mkt)"><span class="n">01 · MARKETING</span><h3>AI 賦能行銷</h3><p>12 週做出行銷企劃與成效。</p></div>
-      <div class="dcard rv" style="--dc:var(--d-des)"><span class="n">02 · DESIGN</span><h3>AI 賦能設計</h3><p>12 週做出品牌視覺設計包。</p></div>
-      <div class="dcard rv" style="--dc:var(--d-med)"><span class="n">03 · SELF-MEDIA</span><h3>AI 賦能自媒體</h3><p>12 週做出能持續產出的頻道。</p></div>
-      <div class="dcard rv" style="--dc:var(--d-prod)"><span class="n">04 · PRODUCT</span><h3>AI 賦能產品設計</h3><p>12 週做出完整 UI/UX 產品案。</p></div>
-      <div class="dcard rv" style="--dc:var(--d-eng)"><span class="n">05 · ENGINEERING</span><h3>AI 賦能工程</h3><p>12 週做出可上線的 AI 應用。</p></div>
+    <div class="nova-sum rv">
+      <div class="nova-sum__title">NOVA 超星計畫</div>
+      <p class="nova-sum__tag">別人練好幾年的專業，用 AI 賦能，你可以快速學習、做出成果</p>
+      <div class="pillars">
+        <div><h3>快速學會</h3><p>不用練好幾年，用 AI 加速上手</p></div>
+        <div><h3>做出作品</h3><p>每個領域都帶走能上場的成品</p></div>
+        <div><h3>領先起跑</h3><p>早一步會 AI，贏在新的起跑線</p></div>
+      </div>
     </div>
     <div class="facts rv">
       <span><b>1 對 5</b>小班</span><span><b>每月</b>一梯</span><span><b>12 週</b>做出作品</span><span><b>業界教練</b>陪跑</span>
@@ -566,9 +576,9 @@ html.embedded .dock{display:none}
         <span class="mono" style="font-size:11px;color:var(--accent)">NOVA PRE-FLIGHT · NV-000</span>
         <h3>前導體驗課 · 全套</h3>
         <ul class="inc">
-          <li>LV.1 通識課 · 真的看懂 AI<small>68 分</small></li>
-          <li>LV.2 實戰課 · 產品設計實戰<small>90 分</small></li>
-          <li>LV.3 進階課 · 打包你的 Skill<small>90 分</small></li>
+          <li>LV.1 通識課 · 真的看懂 AI<small>60 分</small></li>
+          <li>LV.2 實戰課 · 產品設計實戰<small>60 分</small></li>
+          <li>LV.3 進階課 · 打包你的 Skill<small>60 分</small></li>
           <li>學員講義＋課堂實作素材<small>一鍵複製</small></li>
           <li>NOVA 顧問一對一諮詢<small>1 次</small></li>
         </ul>
@@ -591,12 +601,10 @@ html.embedded .dock{display:none}
   <div class="wrap">
     <div class="sec-head c rv"><span class="kicker">FAQ</span><h2>出發前的問題</h2></div>
     <div class="faq rv">
-      <details><summary>100 元包含哪些？</summary><p>三堂前導課（通識課、實戰課、進階課，共約 248 分鐘），加上學員講義、課堂實作素材，以及一次 NOVA 顧問一對一諮詢。</p></details>
+      <details><summary>100 元包含哪些？</summary><p>三堂前導課（通識課、實戰課、進階課，共 180 分鐘），加上學員講義、課堂實作素材，以及一次 NOVA 顧問一對一諮詢。</p></details>
       <details><summary>完全沒碰過 AI 也可以嗎？</summary><p>可以。第 1 堂就是從「AI 到底在做什麼」開始講。難的部分課程先幫你做好，你只要跟著做幾個關鍵決定，下課就有成品。</p></details>
       <details><summary>需要準備什麼工具？</summary><p>第 1 堂用 ChatGPT、Gemini、Claude 任一個，免費版就可以。第 2、3 堂使用 Claude，建議使用付費方案（費用另計）；沒有付費方案，課程也有替代做法，跟得上進度。</p></details>
-      <details><summary>上完一定要報專案班嗎？</summary><p>不用。100 元就是讓你先體驗、先做出東西。顧問諮詢是幫你判斷適不適合、適合哪個領域，要不要繼續由你決定。</p></details>
-      <details><summary>顧問諮詢會聊什麼？</summary><p>看你在三堂課做出來的作品、聽你想用 AI 達成什麼（轉職、接案、或是在現在的工作上用），再從 NOVA 五大領域裡幫你找出最適合的方向。</p></details>
-      <details><summary>報名後什麼時候上課？</summary><p>完成報名後，會通知你上課方式與時間。</p></details>
+      <details><summary>顧問諮詢會聊什麼？</summary><p>看你在三堂課做出來的作品、聽你想用 AI 達成什麼（轉職、接案、或是在現在的工作上用），再幫你找出最適合的領域方向。</p></details>
     </div>
   </div>
 </section>
@@ -734,13 +742,14 @@ html.embedded .dock{display:none}
     track('trial_demo_switch', { style: btn.dataset.demo });
   }));
 
-  /* ---- 3. 魔王關羅盤：指針輪流指向五個領域 ---- */
+  /* ---- 3. 魔王關羅盤：指針輪流指向各領域 ---- */
   const doms = $$('.dom'), needle = $('#needle');
-  let di = 0, spin = 108, compassTimer = null;
+  const step = 360 / doms.length;
+  let di = 0, spin = 180 - step, compassTimer = null;
   function pointNext(){
     doms.forEach(d=>d.classList.remove('lit'));
     doms[di].classList.add('lit');
-    spin += 72; needle.style.transform = `rotate(${spin}deg)`;
+    spin += step; needle.style.transform = `rotate(${spin}deg)`;
     di = (di+1) % doms.length;
   }
   new IntersectionObserver(es=>es.forEach(e=>{
